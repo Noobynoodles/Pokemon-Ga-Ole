@@ -1,0 +1,67 @@
+[
+  {
+    "name": "main menu exit without data",
+    "exit_code": 0,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: Program terminated.\n"
+  },
+  {
+    "name": "new game without catalogue",
+    "exit_code": 1,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: \n=== NEW PLAYER ===\n\nPlease enter player name: Exception in thread \"main\" java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0\n\tat java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)\n\tat java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)\n\tat java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)\n\tat java.base/java.util.Objects.checkIndex(Objects.java:361)\n\tat java.base/java.util.ArrayList.get(ArrayList.java:427)\n\tat Game.handleMainMenu(Game.java:51)\n\tat Game.startGame(Game.java:23)\n\tat Main.main(Main.java:4)\n"
+  },
+  {
+    "name": "fixture new game and exit",
+    "exit_code": 0,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: \n=== NEW PLAYER ===\n\nPlease enter player name: \n=======================\n       GAME MENU\n=======================\n1. Manage Pokemons\n2. View Leaderboard\n3. Start Battle\n4. Save Game\n5. Return to Main Menu\n\n* WARNING: Quitting before saving will result in unsaved data! *\n\nSelect an option: Do you wish to save? (Y/N): \n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: Program terminated.\n"
+  },
+  {
+    "name": "non-numeric Pokemon details",
+    "exit_code": 1,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: \n=== NEW PLAYER ===\n\nPlease enter player name: \n=======================\n       GAME MENU\n=======================\n1. Manage Pokemons\n2. View Leaderboard\n3. Start Battle\n4. Save Game\n5. Return to Main Menu\n\n* WARNING: Quitting before saving will result in unsaved data! *\n\nSelect an option: \n=======================\n    MANAGE POKEMONS\n=======================\n1. View Pokemon Details\n2. Release Pokemons\n3. Return\n\nSelect an option: \n=== Test's Caught Pokemons ===\n1. Charmander\n2. Squirtle\n3. Bulbasaur\n\nSelect a pokemon to view (-1 to cancel): Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"x\"\n\tat java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:668)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:786)\n\tat Game.managePokemons(Game.java:317)\n\tat Game.handleGameMenu(Game.java:130)\n\tat Game.startGame(Game.java:24)\n\tat Main.main(Main.java:4)\n"
+  },
+  {
+    "name": "cancel Pokemon details repeats prompt",
+    "exit_code": 1,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: \n=== NEW PLAYER ===\n\nPlease enter player name: \n=======================\n       GAME MENU\n=======================\n1. Manage Pokemons\n2. View Leaderboard\n3. Start Battle\n4. Save Game\n5. Return to Main Menu\n\n* WARNING: Quitting before saving will result in unsaved data! *\n\nSelect an option: \n=======================\n    MANAGE POKEMONS\n=======================\n1. View Pokemon Details\n2. Release Pokemons\n3. Return\n\nSelect an option: \n=== Test's Caught Pokemons ===\n1. Charmander\n2. Squirtle\n3. Bulbasaur\n\nSelect a pokemon to view (-1 to cancel): \nOperation canceled. \n\nSelect a pokemon to view (-1 to cancel): Exception in thread \"main\" java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1651)\n\tat Game.managePokemons(Game.java:317)\n\tat Game.handleGameMenu(Game.java:130)\n\tat Game.startGame(Game.java:24)\n\tat Main.main(Main.java:4)\n"
+  },
+  {
+    "name": "damage arithmetic",
+    "exit_code": 0,
+    "output": "D got hit with 5 damage! (95 / 100)\nphysical damage=5\nD got hit with 5 damage! (95 / 100)\nspecial damage=5\n"
+  },
+  {
+    "name": "players share Pokemon object",
+    "exit_code": 0,
+    "output": "same object=true\nsecond player's health=1\n"
+  },
+  {
+    "name": "empty collection cannot reload",
+    "exit_code": 1,
+    "output": "Exception in thread \"main\" java.lang.NumberFormatException: For input string: \"\"\n\tat java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:678)\n\tat java.base/java.lang.Integer.parseInt(Integer.java:786)\n\tat DataManager.loadPlayerFile(DataManager.java:84)\n\tat BugProbe.main(BugProbe.java:27)\n"
+  },
+  {
+    "name": "missing save directory",
+    "exit_code": 0,
+    "output": "Something went wrong. [Ljava.lang.StackTraceElement;@58644d46\nfile exists=false\n"
+  },
+  {
+    "name": "duplicate wild selection",
+    "exit_code": 0,
+    "output": "duplicate wild species observed=true\n"
+  },
+  {
+    "name": "competing battle Scanners",
+    "exit_code": 0,
+    "output": "menu read=menu\ndodge read=[]\noriginal Scanner still holds=l\njava.util.concurrent.ExecutionException: java.util.NoSuchElementException: No line found\n\tat java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)\n\tat java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)\n\tat Battle.getUserInputWithTimeout(Battle.java:220)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat BugProbe.main(BugProbe.java:48)\nCaused by: java.util.NoSuchElementException: No line found\n\tat java.base/java.util.Scanner.nextLine(Scanner.java:1651)\n\tat Battle.lambda$getUserInputWithTimeout$1(Battle.java:216)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\n\tat java.base/java.lang.Thread.run(Thread.java:840)\n"
+  },
+  {
+    "name": "winning battle and catch",
+    "exit_code": 0,
+    "output": "\n=== Turn 1 ===\n\n\n\n=== PLAYER ===\nPlayer used Hit!\n\nWild got hit with 225 damage! (0 / 10)\n\n=== BATTLE WON ===\nAll the wild pokemons were defeated!\n\n=====================\n    CATCH CHANCE!\n=====================\n\nEnter a number to choose a Pokeball: Master Ball (Catch Rate: 100.0%) was thrown!\nWild was successfully caught! \nvictory=true, score=10925\n"
+  },
+  {
+    "name": "save game and exit",
+    "exit_code": 0,
+    "output": "\n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: \n=== NEW PLAYER ===\n\nPlease enter player name: \n=======================\n       GAME MENU\n=======================\n1. Manage Pokemons\n2. View Leaderboard\n3. Start Battle\n4. Save Game\n5. Return to Main Menu\n\n* WARNING: Quitting before saving will result in unsaved data! *\n\nSelect an option: Game successfully saved! \n\nENTER to continue...\n=======================\n       GAME MENU\n=======================\n1. Manage Pokemons\n2. View Leaderboard\n3. Start Battle\n4. Save Game\n5. Return to Main Menu\n\n* WARNING: Quitting before saving will result in unsaved data! *\n\nSelect an option: Do you wish to save? (Y/N): \n============================\n WELCOME TO Pokemon Ga-CLI!\n============================\n1. New Game\n2. Load Game\n3. Exit\n\nSelect an option: Program terminated.\n"
+  }
+]

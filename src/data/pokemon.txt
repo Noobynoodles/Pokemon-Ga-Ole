@@ -1,0 +1,7 @@
+1, Charmander, 1, Fire, Ember, 100, 50, true, 100, 100, 50
+2, Charmeleon, 1, Fire, Flame Burst, 100, 50, true, 100, 100, 50
+3, Charizard, 1, Flying, Wing Attack, 100, 50, true, 100, 100, 50
+4, Squirtle, 1, Water, Water Gun, 100, 50, true, 100, 100, 50
+5, Wartortle, 1, Water, Bubble, 100, 50, true, 100, 100, 50
+6, Pikachu, 1, Electric, Thunder Shock, 100, 50, true, 100, 100, 50
+7, Bulbasaur, 1, Grass, Vine Whip, 100, 50, true, 100, 100, 50

@@ -1,0 +1,7 @@
+1, Charmander, 1, Fire, Test move, 100, 50, true, 100, 100, 50
+2, Charmeleon, 1, Fire, Test move, 100, 50, true, 100, 100, 50
+3, Charizard, 1, Flying, Test move, 100, 50, true, 100, 100, 50
+4, Squirtle, 1, Water, Test move, 100, 50, true, 100, 100, 50
+5, Wartortle, 1, Water, Test move, 100, 50, true, 100, 100, 50
+6, Pikachu, 1, Electric, Test move, 100, 50, true, 100, 100, 50
+7, Bulbasaur, 1, Grass, Test move, 100, 50, true, 100, 100, 50
